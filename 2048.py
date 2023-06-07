@@ -1,28 +1,4 @@
 
-    def game_over_display(self):
-        for i in range(4):
-            for j in range(4):
-                self.grid_cells[i][j].configure(text="", bg=BACKGROUND_COLOR_CELL_EMPTY)
-
-        self.grid_cells[1][1].configure(text="TOP",bg=BACKGROUND_COLOR_CELL_EMPTY)
-        self.grid_cells[1][2].configure(text="4 TILES:",bg=BACKGROUND_COLOR_CELL_EMPTY)
-        top_4 = list(map(int, reversed(sorted(list(self.board.grid.flatten())))))
-        self.grid_cells[2][0].configure(text=str(top_4[0]), bg=BACKGROUND_COLOR_DICT[2048], fg=CELL_COLOR_DICT[2048])
-        self.grid_cells[2][1].configure(text=str(top_4[1]), bg=BACKGROUND_COLOR_DICT[2048], fg=CELL_COLOR_DICT[2048])
-        self.grid_cells[2][2].configure(text=str(top_4[2]), bg=BACKGROUND_COLOR_DICT[2048], fg=CELL_COLOR_DICT[2048])
-        self.grid_cells[2][3].configure(text=str(top_4[3]), bg=BACKGROUND_COLOR_DICT[2048], fg=CELL_COLOR_DICT[2048])
-        self.update()
-
-    def init_grid(self):
-        background = Frame(self, bg=BACKGROUND_COLOR_GAME, width=SIZE, height=SIZE)
-        background.grid()
-
-        for i in range(GRID_LEN):
-            grid_row = []
-
-            for j in range(GRID_LEN):
-
-                cell = Frame(background, bg=BACKGROUND_COLOR_CELL_EMPTY, width=SIZE/GRID_LEN, height=SIZE/GRID_LEN)
                 cell.grid(row=i, column=j, padx=GRID_PADDING, pady=GRID_PADDING)
                 # font = Font(size=FONT_SIZE, family=FONT_FAMILY, weight=FONT_WEIGHT)
                 t = Label(master=cell, text="", bg=BACKGROUND_COLOR_CELL_EMPTY, justify=CENTER, font=FONT, width=4, height=2)
