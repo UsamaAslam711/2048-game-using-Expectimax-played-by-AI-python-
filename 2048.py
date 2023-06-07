@@ -1,28 +1,4 @@
 
-
-dirs = [UP, DOWN, LEFT, RIGHT] = range(4)
-
-@jit
-def merge(a):
-    for i in [0,1,2,3]:
-        for j in [0,1,2]:
-            if a[i][j] == a[i][j + 1] and a[i][j] != 0:
-                a[i][j] *= 2
-                a[i][j + 1] = 0   
-    return a
-
-@jit
-def justify_left(a, out):
-    for i in [0,1,2,3]:
-        c = 0
-        for j in [0,1,2,3]:
-            if a[i][j] != 0:
-                out[i][c] = a[i][j]
-                c += 1
-    return out
-
-@jit
-def get_available_from_zeros(a):
     uc, dc, lc, rc = False, False, False, False
 
     v_saw_0 = [False, False, False, False]
