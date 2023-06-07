@@ -1,26 +1,5 @@
 
  
-     
-                if self.grid[x][y] == 0:
-                    cells.append((x,y))
-        return cells
-
-    def get_max_tile(self):
-        return np.amax(self.grid)
-
-    def move(self, dir, get_avail_call = False):
-        if get_avail_call:
-            clone = self.clone()
-
-        z1 = np.zeros((4, 4))#, dtype=np.int_)
-        z2 = np.zeros((4, 4))#, dtype=np.int_)
-
-        if dir == UP:
-            self.grid = self.grid[:,::-1].T
-            self.grid = justify_left(self.grid, z1)
-            self.grid = merge(self.grid)
-            self.grid = justify_left(self.grid, z2)
-            self.grid = self.grid.T[:,::-1]
         if dir == DOWN:
             self.grid = self.grid.T[:,::-1]
             self.grid = justify_left(self.grid, z1)
