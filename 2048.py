@@ -1,29 +1,5 @@
 
-    uc, dc, lc, rc = False, False, False, False
-
-    v_saw_0 = [False, False, False, False]
-    v_saw_1 = [False, False, False, False]
-
-    for i in [0,1,2,3]:
-        saw_0 = False
-        saw_1 = False
-
-        for j in [0,1,2,3]:
-
-            if a[i][j] == 0:
-                saw_0 = True
-                v_saw_0[j] = True
-
-                if saw_1:
-                    rc = True
-                if v_saw_1[j]:
-                    dc = True
-
-            if a[i][j] > 0:
-                saw_1 = True
-                v_saw_1[j] = True
-
-                if saw_0:
+ 
                     lc = True
                 if v_saw_0[j]:
                     uc = True
