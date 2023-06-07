@@ -1,27 +1,6 @@
 
  
-                    lc = True
-                if v_saw_0[j]:
-                    uc = True
-
-    return [uc, dc, lc, rc]
-
-class GameBoard:
-    def __init__(self):
-        self.grid = np.zeros((4, 4))#, dtype=np.int_)
-
-    def clone(self):
-        grid_copy = GameBoard()
-        grid_copy.grid = np.copy(self.grid)
-        return grid_copy
-
-    def insert_tile(self, pos, value):
-        self.grid[pos[0]][pos[1]] = value
-
-    def get_available_cells(self):
-        cells = []
-        for x in range(4):
-            for y in range(4):
+     
                 if self.grid[x][y] == 0:
                     cells.append((x,y))
         return cells
