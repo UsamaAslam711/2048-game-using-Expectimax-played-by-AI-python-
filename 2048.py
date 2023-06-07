@@ -1,28 +1,4 @@
 
-        self.master.title('2048')
-        self.grid_cells = []
-
-        self.init_grid()
-        self.init_matrix()
-        self.update_grid_cells()
-        self.EXPECTIMAX = EXPECTIMAX()
-
-        self.run_game()
-        self.mainloop()
-
-    def run_game(self):
-        while True:
-            self.board.move(self.EXPECTIMAX.get_move(self.board))
-            self.update_grid_cells()
-            self.add_random_tile()
-            self.update_grid_cells()
-
-            if len(self.board.get_available_moves()) == 0:
-                self.game_over_display()
-                break
-
-            self.update()
-        
     def game_over_display(self):
         for i in range(4):
             for j in range(4):
