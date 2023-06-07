@@ -1,24 +1,4 @@
 
-    def get_available_moves(self, dirs = dirs):
-        available_moves = []
-        
-        a1 = get_available_from_zeros(self.grid)
-
-        for x in dirs:
-            if not a1[x]:
-                board_clone = self.clone()
-
-                if board_clone.move(x, True):
-                    available_moves.append(x)
-
-            else:
-                available_moves.append(x)
-
-        return available_moves
-
-    def get_cell_value(self, pos):
-        return self.grid[pos[0]][pos[1]]
-
 
 
 UP, DOWN, LEFT, RIGHT = range(4)
