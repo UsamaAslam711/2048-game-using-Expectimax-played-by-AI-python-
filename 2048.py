@@ -1,18 +1,4 @@
-ility[0] >= max_utility[0]:
-                max_utility = utility
-                best_direction = mb[0]
-
-        return best_direction, max_utility
-
-    def chance(self, board, depth = 0):
-        empty_cells = board.get_available_cells()
-        n_empty = len(empty_cells)
-
-        if n_empty >= 6 and depth >= 3:
-            return self.eval_board(board, n_empty)
-
-        if n_empty >= 0 and depth >= 5:
-            return self.eval_board(board, n_empty)
+ self.eval_board(board, n_empty)
 
         if n_empty == 0:
             _, utility = self.maximize(board, depth + 1)
