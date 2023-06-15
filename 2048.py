@@ -1,23 +1,4 @@
-.append((empty_cell, 4, chance_4))
 
-        utility_sum = [0, 0, 0, 0]
-
-        for t in possible_tiles:
-            t_board = board.clone()
-            t_board.insert_tile(t[0], t[1])
-            _, utility = self.maximize(t_board, depth + 1)
-
-            for i in range(4):
-                utility_sum[i] += utility[i] * t[2]
-
-        return tuple(utility_sum)
-
-
-
-dirs = [UP, DOWN, LEFT, RIGHT] = range(4)
-
-@jit
-def merge(a):
     for i in [0,1,2,3]:
         for j in [0,1,2]:
             if a[i][j] == a[i][j + 1] and a[i][j] != 0:
