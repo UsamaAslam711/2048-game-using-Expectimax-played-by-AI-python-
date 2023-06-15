@@ -1,25 +1,5 @@
  -= np.sum(np.abs(s_grid[0,::] - s_grid[1,::]))
-        smoothness -= np.sum(np.abs(s_grid[1,::] - s_grid[2,::]))
-        smoothness -= np.sum(np.abs(s_grid[2,::] - s_grid[3,::]))
-        
-        empty_w = 100000
-        smoothness_w = 3
 
-        empty_u = n_empty * empty_w
-        smooth_u = smoothness ** smoothness_w
-        big_t_u = big_t
-
-        utility += big_t
-        utility += empty_u
-        utility += smooth_u
-
-        return (utility, empty_u, smooth_u, big_t_u)
-
-    def maximize(self, board, depth = 0):
-        moves = board.get_available_moves()
-        moves_boards = []
-
-        for m in moves:
             m_board = board.clone()
             m_board.move(m)
             moves_boards.append((m, m_board))
