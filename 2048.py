@@ -1,25 +1,4 @@
 
-        chance_2 = (.9 * (1 / n_empty))
-        chance_4 = (.1 * (1 / n_empty))
-        
-        for empty_cell in empty_cells:
-            possible_tiles.append((empty_cell, 2, chance_2))
-            possible_tiles.append((empty_cell, 4, chance_4))
-
-        utility_sum = [0, 0, 0, 0]
-
-        for t in possible_tiles:
-            t_board = board.clone()
-            t_board.insert_tile(t[0], t[1])
-            _, utility = self.maximize(t_board, depth + 1)
-
-            for i in range(4):
-                utility_sum[i] += utility[i] * t[2]
-
-        return tuple(utility_sum)
-
-
-
 dirs = [UP, DOWN, LEFT, RIGHT] = range(4)
 
 @jit
