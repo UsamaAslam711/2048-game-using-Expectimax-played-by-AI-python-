@@ -1,16 +1,4 @@
- -= np.sum(np.abs(s_grid[0,::] - s_grid[1,::]))
-
-            m_board = board.clone()
-            m_board.move(m)
-            moves_boards.append((m, m_board))
-
-        max_utility = (float('-inf'),0,0,0)
-        best_direction = None
-
-        for mb in moves_boards:
-            utility = self.chance(mb[1], depth + 1)
-
-            if utility[0] >= max_utility[0]:
+ility[0] >= max_utility[0]:
                 max_utility = utility
                 best_direction = mb[0]
 
