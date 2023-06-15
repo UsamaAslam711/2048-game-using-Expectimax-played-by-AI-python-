@@ -1,23 +1,4 @@
-
-
-class EXPECTIMAX():
-
-    def get_move(self, board):
-        best_move, _ = self.maximize(board)
-        return best_move
-
-    def eval_board(self, board, n_empty): 
-        grid = board.grid
-
-        utility = 0
-        smoothness = 0
-
-        big_t = np.sum(np.power(grid, 2))
-        s_grid = np.sqrt(grid)
-        smoothness -= np.sum(np.abs(s_grid[::,0] - s_grid[::,1]))
-        smoothness -= np.sum(np.abs(s_grid[::,1] - s_grid[::,2]))
-        smoothness -= np.sum(np.abs(s_grid[::,2] - s_grid[::,3]))
-        smoothness -= np.sum(np.abs(s_grid[0,::] - s_grid[1,::]))
+ -= np.sum(np.abs(s_grid[0,::] - s_grid[1,::]))
         smoothness -= np.sum(np.abs(s_grid[1,::] - s_grid[2,::]))
         smoothness -= np.sum(np.abs(s_grid[2,::] - s_grid[3,::]))
         
