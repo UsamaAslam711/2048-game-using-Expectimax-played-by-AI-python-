@@ -1,17 +1,4 @@
- self.eval_board(board, n_empty)
-
-        if n_empty == 0:
-            _, utility = self.maximize(board, depth + 1)
-            return utility
-
-        possible_tiles = []
-
-        chance_2 = (.9 * (1 / n_empty))
-        chance_4 = (.1 * (1 / n_empty))
-        
-        for empty_cell in empty_cells:
-            possible_tiles.append((empty_cell, 2, chance_2))
-            possible_tiles.append((empty_cell, 4, chance_4))
+.append((empty_cell, 4, chance_4))
 
         utility_sum = [0, 0, 0, 0]
 
